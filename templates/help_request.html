@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Help Request{% endblock %}
+
+{% block header %}
+<h1 style="padding: 20px;" class="center-text"><b>Send a Help Request</b></h1>
+<p class="center-text">Individuals who can provide help will recieve an email and text message alert</p>
+{% endblock %}
+
+{% block content %}
+<form action="" method="POST" class="center-form">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Message Header</label>
+      <input type="header" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Title">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Message Body</label>
+      <textarea placeholder="Message..." name="body" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+  </form>
+{% endblock %}

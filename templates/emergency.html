@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Emergency Alert{% endblock %}
+
+{% block header %}
+<h1 style="padding: 20px;" class="center-text"><b>Send an Emergency Alert</b></h1>
+<p class="center-text">An emergency alert will notify everyone on the recipient list with a text message</p>
+{% endblock %}
+
+{% block content %}
+<form action="" method="POST" class="center-form">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Alert Header</label>
+      <input type="header" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Title">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Alert Body</label>
+      <textarea placeholder="Message..." name="body" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+  </form>
+{% endblock %}

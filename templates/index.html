@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block header %}
+<h1 style="font-size: 50px; padding: 20px;font-family: sans-serif;" class="center-text"><b>Alerts</b></h1>
+
+{% endblock %}
+
+{% block content %}
+<div class="center-card">
+  {% for item in entries %}
+    <div style="margin-bottom: 10px;" class="card text-black border-{{item[2]}} mb-3">
+      <div class="card-header">
+        {{item[0]}}
+      </div>
+      <div class="card-body">
+        {{item[1]}}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+<p class="center-text" style="font-size: 20px; margin-bottom: -20px;" ><b><span style="color: #2e9acc">Blue:</span> notifications.</b></p>
+<p class="center-text" style="font-size: 20px; margin-bottom: -20px;" ><b><span style="color: #b6b312">Yellow:</span>requests for help.</b></p>
+<p class="center-text" style="font-size: 20px; margin-bottom: 20px;" ><b><span style="color: #ff0000">Red:</span> emergency alerts.</b></p>
+{% endblock %}

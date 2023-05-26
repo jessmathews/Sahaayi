@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Add a Recipient{% endblock %}
+
+{% block header %}
+<h1 style="padding: 20px;" class="center-text"><b>Add a Recipient</b></h1>
+<p class="center-text">Add yourself or someone to the alert recipient list</p>
+{% endblock %}
+
+{% block content %}
+<form action="" method="POST" class="center-form">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input  type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">Email alerts will be sent here</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputphone1">Phone Number</label>
+      <input  type="phonenumber" name="phone" class="form-control" id="exampleInputphone1" placeholder="Enter Phone Number">
+      <small id="emailHelp" class="form-text text-muted">Emergency Alerts will be sent to your phone number.</small>
+    </div>
+    <div class="form-group form-check">
+        <input  type="checkbox" name="provide_help" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Can Provide Help</label>
+      </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+{% endblock %}
