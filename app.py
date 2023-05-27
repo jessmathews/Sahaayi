@@ -11,9 +11,9 @@ def home():
     cursor = connection.cursor()
     data = cursor.execute("SELECT * from ALERTS;")
     entries = []
-    for entry in data:
-        entries.append(entry)
-    entries.reverse()
+    for d in data:
+        entries.append(d)
+    entries.reverse() #sort by recent
     return render_template('index.html', entries=entries, name='Home')
     
 @app.route('/add', methods=['GET', 'POST'])
@@ -75,8 +75,8 @@ def notification():
         cursor = connection.cursor()
         data = cursor.execute("select * from CONTACTS")
         entries = []
-        for entry in data:
-            entries.append(entry)
+        for d in data:
+            entries.append(d)
         def sendmail():
             #write a sendmail funtion later
             print("sending mail...")
@@ -113,8 +113,8 @@ def help_request():
         cursor = connection.cursor()
         data = cursor.execute("SELECT * from CONTACTS WHERE Helper=1 ")
         entries = []
-        for entry in data:
-            entries.append(entry)
+        for d in data:
+            entries.append(d)
 
         def sendmail():
             #write a sendmail funtion later
@@ -153,8 +153,8 @@ def emergency():
         cursor = connection.cursor()
         data = cursor.execute("SELECT * from CONTACTS;")
         entries = []
-        for entry in data:
-            entries.append(entry)
+        for d in data:
+            entries.append(d)
 
         for entry in entries:
             def sendMessage():
